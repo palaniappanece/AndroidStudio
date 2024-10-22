@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        tv1=(TextView) findViewById(R.id.textview);
+        tv1=(TextView) findViewById(R.id.textView);
         sensormanager=(SensorManager) getSystemService(Context.SENSOR_SERVICE);
         devicesensor=sensormanager.getSensorList(Sensor.TYPE_ALL);
         for(Sensor sensor: devicesensor)

@@ -17,7 +17,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     TextView tv1,tv2;
     SensorManager sensormanager;
-    List<Sensor> device;
+    //List<Sensor> device;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,16 +28,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        tv1=(TextView) findViewById(R.id.Sensor1);
-        tv2=(TextView) findViewById(R.id.Sensor2);
-        sensormanager=(SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        device=sensormanager.getSensorList(Sensor.TYPE_ALL);
-        if(sensormanager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)!=null)
+        tv1 = (TextView) findViewById(R.id.Sensor1);
+        tv2 = (TextView) findViewById(R.id.Sensor2);
+        sensormanager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        //device=sensormanager.getSensorList(Sensor.TYPE_ALL);
+        if(sensormanager.getDefaultSensor(Sensor.TYPE_LIGHT)!=null)
         {
-            tv1.setText("This device has ambient temp");
+            tv1.setText("This device has Light sensor");
         }
         else{
-            tv1.setText("This device has not ambient temp");
+            tv1.setText("This device has not Light sensor");
         }
         if(sensormanager.getDefaultSensor(Sensor.TYPE_HEART_BEAT)!=null)
         {
